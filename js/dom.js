@@ -132,16 +132,15 @@ const $html = document.documentElement,
 
 let varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color"),
   varYellowColor = getComputedStyle($html).getPropertyValue("--yellow-color");
+  
+  console.log(varDarkColor, varYellowColor);
 
-console.log(varDarkColor, varYellowColor);
-
-$body.style.backgroundColor = varDarkColor;
-$body.style.color = varYellowColor;
-
-$html.style.setProperty("--dark-color", "#000");
-varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
-
-$body.style.setProperty("background-color", varDarkColor); */
+  $body.style.backgroundColor = varDarkColor;
+  $body.style.color = varYellowColor;
+  $html.style.setProperty("--dark-color", "#000");
+  varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
+  
+  $body.style.setProperty("background-color", varDarkColor);*/
 /*
 
 
@@ -151,7 +150,6 @@ $body.style.setProperty("background-color", varDarkColor); */
 */
 /* **********     Curso JavaScript: 65. DOM: Clases CSS - #jonmircha     ********** */
 /* const $card = document.querySelector(".card");
-
 console.log($card);
 console.log($card.className);
 console.log($card.classList);
@@ -181,21 +179,21 @@ $card.classList.toggle("opacity-80", "sepia"); */
 /* **********     Curso JavaScript: 66. DOM: Texto y HTML - #jonmircha     ********** */
 /* const $whatIsDOM = document.getElementById("que-es");
 let text = `
-    <p>
-      El Modelo de Objetos del Documento (<b><i>DOM - Document Object Model</i></b>) es un API para documentos HTML y XML.
-    </p>
-    <p>
-      Éste proveé una representación estructural del documento, permitiendo modificar su contenido y presentación visual mediante código JS.
-    </p>
-    <p>
-      <mark>El DOM no es parte de la especificación de JavaScript, es una API para los navegadores.</mark>
-    </p>
-  `;
+          <p>
+            El Modelo de Objetos del Documento (<b><i>DOM - Document Object Model</i></b>) es un API para documentos HTML y XML.
+          </p>
+          <p>
+            Éste proveé una representación estructural del documento, permitiendo modificar su contenido y presentación visual mediante código JS.
+          </p>
+          <p>
+          <mark>El DOM no es parte de la especificación de JavaScript, es una API para los navegadores.</mark>
+          </p>
+          `;
 
 //$whatIsDOM.innerText = text;
 $whatIsDOM.textContent = text;
 $whatIsDOM.innerHTML = text;
-$whatIsDOM.outerHTML = text; */
+$whatIsDOM.outerHTML = text;  */
 /*
 
 
@@ -204,8 +202,7 @@ $whatIsDOM.outerHTML = text; */
 
 */
 /* **********     Curso JavaScript: 67. DOM Traversing: Recorriendo el DOM - #jonmircha     ********** */
-/* const $cards = document.querySelector(".cards");
-
+/*const $cards = document.querySelector(".cards");
 console.log($cards);
 console.log($cards.children);
 console.log($cards.children[2]);
@@ -216,7 +213,7 @@ console.log($cards.previousElementSibling);
 console.log($cards.nextElementSibling);
 console.log($cards.closest("div"));
 console.log($cards.closest("body"));
-console.log($cards.children[3].closest("section")); */
+console.log($cards.children[3].closest("section"));*/
 /*
 
 
@@ -226,20 +223,22 @@ console.log($cards.children[3].closest("section")); */
  */
 /* **********     Curso JavaScript: 68. DOM: Creando Elementos y Fragmentos - #jonmircha     ********** */
 /* const $figure = document.createElement("figure"),
-  $img = document.createElement("img"),
-  $figcaption = document.createElement("figcaption"),
-  $figcaptionText = document.createTextNode("Animals"),
-  $cards = document.querySelector(".cards"),
-  $figure2 = document.createElement("figure");
+$img = document.createElement("img"),
+$figcaption = document.createElement("figcaption"),
+$figcaptionText = document.createTextNode("Animals"),
+$cards = document.querySelector(".cards"),
+$figure2 = document.createElement("figure");
 
 $img.setAttribute("src", "https://placeimg.com/200/200/animals");
 $img.setAttribute("alt", "Animals");
-$figure.classList.add("card");
 
 $figcaption.appendChild($figcaptionText);
 $figure.appendChild($img);
 $figure.appendChild($figcaption);
 $cards.appendChild($figure);
+
+$figure.classList.add("card");
+
 
 $figure2.innerHTML = `
 <img src="https://placeimg.com/200/200/people" alt="People">
@@ -250,7 +249,7 @@ $figure2.classList.add("card");
 $cards.appendChild($figure2);
 
 const estaciones = ["Primavera", "Verano", "Otoño", "Invierno"],
-  $ul = document.createElement("ul");
+$ul = document.createElement("ul");
 
 document.write("<h3>Estaciones del Año</h3>");
 document.body.appendChild($ul);
@@ -262,7 +261,7 @@ estaciones.forEach((el) => {
 });
 
 const continentes = ["África", "América", "Asia", "Europa", "Oceanía"],
-  $ul2 = document.createElement("ul");
+$ul2 = document.createElement("ul");
 
 document.write("<h3>Continentes del Mundo</h3>");
 document.body.appendChild($ul2);
@@ -270,21 +269,21 @@ $ul2.innerHTML = "";
 continentes.forEach((el) => ($ul2.innerHTML += `<li>${el}</li>`));
 
 const meses = [
-    "Enero",
-    "Febrero",
-    "Marzo",
-    "Abril",
-    "Mayo",
-    "Junio",
-    "Julio",
-    "Agosto",
-    "Septiembre",
-    "Octubre",
-    "Noviembre",
-    "Diciembre",
-  ],
-  $ul3 = document.createElement("ul"),
-  $fragment = document.createDocumentFragment();
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre",
+],
+$ul3 = document.createElement("ul"),
+$fragment = document.createDocumentFragment();
 
 meses.forEach((el) => {
   const $li = document.createElement("li");
@@ -304,36 +303,36 @@ document.body.appendChild($ul3); */
 */
 /* **********     Curso JavaScript: 69. DOM: Templates HTML - #jonmircha     ********** */
 /* const $cards = document.querySelector(".cards"),
-  $template = document.getElementById("template-card").content,
-  $fragment = document.createDocumentFragment(),
-  cardsContent = [
-    {
-      title: "Tecnología",
-      img: "https://placeimg.com/200/200/tech",
-    },
-    {
-      title: "Animales",
-      img: "https://placeimg.com/200/200/animals",
-    },
-    {
-      title: "Arquitectura",
-      img: "https://placeimg.com/200/200/arch",
-    },
-    {
-      title: "Gente",
-      img: "https://placeimg.com/200/200/people",
-    },
-    {
-      title: "Naturaleza",
-      img: "https://placeimg.com/200/200/nature",
-    },
-  ];
+$template = document.getElementById("template-card").content,
+$fragment = document.createDocumentFragment(),
+cardsContent = [
+  {
+    title: "Tecnología",
+    img: "https://placeimg.com/200/200/tech",
+  },
+  {
+    title: "Animales",
+    img: "https://placeimg.com/200/200/animals",
+  },
+  {
+    title: "Arquitectura",
+    img: "https://placeimg.com/200/200/arch",
+  },
+  {
+    title: "Gente",
+    img: "https://placeimg.com/200/200/people",
+  },
+  {
+    title: "Naturaleza",
+    img: "https://placeimg.com/200/200/nature",
+  },
+];
 
 cardsContent.forEach((el) => {
   $template.querySelector("img").setAttribute("src", el.img);
   $template.querySelector("img").setAttribute("alt", el.title);
   $template.querySelector("figcaption").textContent = el.title;
-
+  
   let $clone = document.importNode($template, true);
   $fragment.appendChild($clone);
 });
@@ -348,12 +347,12 @@ $cards.appendChild($fragment); */
 */
 /* **********     Curso JavaScript: 70. DOM: Modificando Elementos (Old Style) - #jonmircha     ********** */
 /* const $cards = document.querySelector(".cards"),
-  $newCard = document.createElement("figure"),
-  $cloneCards = $cards.cloneNode(true);
+$newCard = document.createElement("figure"),
+$cloneCards = $cards.cloneNode(true);
 
 $newCard.innerHTML = `
-  <img src="https://placeimg.com/200/200/any" alt="Any">
-  <figcaption>Any</figcaption>
+<img src="https://placeimg.com/200/200/any" alt="Any">
+<figcaption>Any</figcaption>
 `;
 $newCard.classList.add("card");
 
@@ -369,8 +368,8 @@ document.body.appendChild($cloneCards); */
 
 */
 /* **********     Curso JavaScript: 71. DOM: Modificando Elementos (Cool Style) - #jonmircha     ********** */
-/*
-.insertAdjacent...
+
+/* .insertAdjacent...
   .insertAdjacentElement(position, el)
   .insertAdjacentHTML(position, html)
   .insertAdjacentText(position, text)
@@ -379,8 +378,8 @@ Posiciones:
   beforebegin(hermano anterior)
   afterbegin(primer hijo)
   beforeend(ultimo hijo)
-  afterend(hermano siguiente)
-*/
+  afterend(hermano siguiente) */
+
 /* const $cards = document.querySelector(".cards"),
   $newCard = document.createElement("figure");
 
@@ -390,13 +389,13 @@ let $contenCard = `
 `;
 $newCard.classList.add("card");
 
-$newCard.insertAdjacentHTML("afterbegin", $contenCard);
+$newCard.insertAdjacentHTML("beforeend", $contenCard);
 $cards.insertAdjacentElement("beforeend", $newCard);
-$newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any"); */
+$newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");
 //$cards.prepend($newCard);
 //$cards.append($newCard);
 //$cards.before($newCard);
-//$cards.after($newCard);
+$cards.after($newCard); */
 /*
 
 
@@ -412,13 +411,8 @@ Las funciones que se ejecutan en un evento se llaman Event Handler (Manejador de
 
 https://developer.mozilla.org/en-US/docs/Web/Events
 */
-/* function holaMundo() {
+function holaMundo() {
   alert("Hola Mundo");
-  console.log(event);
-}
-
-function saludar(nombre = "Desconocid@") {
-  alert(`Hola ${nombre}`);
   console.log(event);
 }
 
@@ -441,6 +435,14 @@ $eventoMultiple.addEventListener("click", (e) => {
   console.log(e.target);
   console.log(event);
 });
+/*
+function saludar(nombre = "Desconocid@") {
+  alert(`Hola ${nombre}`);
+  console.log(event);
+}
+
+
+
 $eventoMultiple.addEventListener("click", () => {
   saludar();
   saludar("Jon");
@@ -453,7 +455,8 @@ const removerDobleClick = (e) => {
   $eventoRemover.disabled = true;
 };
 
-$eventoRemover.addEventListener("dblclick", removerDobleClick); */
+$eventoRemover.addEventListener("dblclick", removerDobleClick);
+*/
 /*
 
 
